@@ -3,16 +3,11 @@ from typing import List, Tuple, Callable
 def check_win(board: List[List[int]]) -> bool:
     pass
 
-def get_state(board: List[List[int]]) -> bool:
-    pass
-
 def game_theory(board: List[List[int]], depth: int, check_win: Callable, saddle: bool) -> float:
     if check_win(board):
         return float('inf')
-    elif not check_win(board):
+    else:
         return -float('inf')
-    elif get_state(board):
-        return 0.
     
     if saddle:
         score = -float('inf')
