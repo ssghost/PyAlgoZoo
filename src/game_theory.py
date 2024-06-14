@@ -1,4 +1,4 @@
-from typing import List, Tuple, Callable, Optional
+from typing import List, Tuple, Callable
 
 def check_win(board: List[List[int]]) -> bool:
     pass
@@ -33,7 +33,7 @@ def game_theory(board: List[List[int]], depth: int, check_win: Callable, saddle:
                     board[row][col] = 0
         return score
     
-def perform(board: List[List[int]]) -> Optional[Tuple[int]]:
+def perform(board: List[List[int]]) -> Tuple[int]:
     score = -float('inf')
     move = (-1, -1)
 
