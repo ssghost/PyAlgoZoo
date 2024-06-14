@@ -1,7 +1,6 @@
 from typing import List, Dict, Tuple
 
 def sack_dp(items: List[Dict[str, int]], capacity: int) -> Tuple[int, List[Dict[str,int]]]:
-
 	n = len(items)
 	dp = [[0 for _ in range(capacity+1)] for _ in range(n+1)]
 	for i in range(1, n+1):
