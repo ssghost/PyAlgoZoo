@@ -20,9 +20,8 @@ def game_theory(board: List[List[int]], depth: int, check_win: Callable, saddle:
             for col in range(len(board[row])):
                 if board[row][col] == 0: 
                     board[row][col] = 1
-                    cur_score = max(score, game_theory(board, depth + 1, False))
+                    score = max(score, game_theory(board, depth + 1, False))
                     board[row][col] = 0
-                    score = max(score, cur_score)
         return score
     else:
         score = float('inf')
@@ -30,9 +29,8 @@ def game_theory(board: List[List[int]], depth: int, check_win: Callable, saddle:
             for col in range(len(board[row])):
                 if board[row][col] == 0:
                     board[row][col] = -1
-                    cur_score = min(score, game_theory(board, depth + 1, True))
+                    score = min(score, game_theory(board, depth + 1, True))
                     board[row][col] = 0
-                    score = min(score, cur_score)
         return score
     
 def perform(board: List[List[int]]) -> Optional[Tuple[int]]:
